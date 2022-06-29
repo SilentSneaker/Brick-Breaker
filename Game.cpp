@@ -87,11 +87,13 @@ void Game::Render() const
 	}
 	if (bricks.size() == 0)
 	{
+		
 		Console::SetCursorPosition(Console::WindowHeight() / 2, Console::WindowWidth() / 2);
 		std::cout << "You have won!!!\nPress R to reset ";
 	}
 	if (ball.y_position > paddle.y_position + 2)
 	{
+		
 		Console::SetCursorPosition(Console::WindowHeight() / 2, Console::WindowWidth() / 2);
 		std::cout << "You have been defeated!!!\nPress R to reset ";
 	}
@@ -127,7 +129,8 @@ void Game::CheckCollision()
 	{
 
 		ball.moving = false;
-
+		ball.x_position = Console::WindowHeight() / 2;
+		ball.y_position = Console::WindowWidth() / 2;
 
 	}
 
@@ -140,6 +143,7 @@ void Game::CheckCollision()
 	if (ball.y_position > paddle.y_position + 2)
 	{
 		ball.moving = false;
-
+		ball.x_position = Console::WindowHeight() / 2;
+		ball.y_position = Console::WindowWidth() / 2;
 	}
 }
